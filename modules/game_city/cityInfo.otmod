@@ -1,0 +1,13 @@
+Module
+  name: cityInfo
+  description: Informações das Cidades
+  author: Luxy
+  website: www.pokecentro.net
+
+  autoload: true
+  autoload-priority: 1000
+
+  scripts: [ cityInfo ]
+  sandboxed: true
+  @onLoad: init()
+  @onUnload: terminate()
