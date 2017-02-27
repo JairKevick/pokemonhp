@@ -1,0 +1,9 @@
+Module
+  name: mod_lootwindow
+  description: Picking loot
+  author: Dzru
+  website: none
+  sandboxed: true
+  scripts: [ lootwindow ]
+  @onLoad: init()
+  @onUnload: terminate()

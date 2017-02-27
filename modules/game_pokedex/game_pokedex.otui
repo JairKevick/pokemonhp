@@ -1,0 +1,134 @@
+ListLabel < GameLabel
+  margin-top: 2
+  focusable: false
+  text-auto-resize: true
+  id: lblConteudo
+
+  $first:
+    margin-top: 5
+
+LineList < UILabel
+  font: verdana-11px-monochrome
+  background-color: alpha
+  text-offset: 2 0
+  phantom: false
+
+  $focus:
+    background-color: #ffffff22
+
+MainWindow
+  id: PokedexWindow
+  size: 370 361
+  &save: true
+  image-source: imagens/Fundo2.png
+  image-clip: 0 0 0 0
+  @onEnter: hide()
+  @onEscape: hide()
+
+  UIImageView
+    id: imgPokemon
+    anchors.left: parent.left
+    anchors.top: parent.top
+    margin-left: 32
+    margin-top: 51
+    size: 204 155
+
+  Item
+    id: portrait1
+    image-color: alpha
+    anchors.top: parent.top
+    anchors.left: parent.left
+    margin-left: 18
+    margin-top: -5
+    virtual: true
+
+  Button
+    id: btnClose
+    !text: tr('Close')
+    width: 50
+    anchors.right: parent.right
+    anchors.bottom: parent.bottom
+    margin-top: 300
+    margin-left: 85
+    @onClick: hide()
+
+  ScrollablePanel
+    id: pnlDescricao
+    anchors.top: parent.top
+    anchors.left: parent.left
+    margin-top: 50
+    margin-left: 3
+    size: 290 230
+    vertical-scrollbar: scrDescricao
+    visible: false
+
+    ListLabel
+      id: lblConteudo
+      anchors.left: parent.left
+      anchors.top: parent.top
+      margin-top: 2
+      margin-left: 10
+
+  VerticalScrollBar
+    id: scrDescricao
+    anchors.top: pnlDescricao.top
+    anchors.left: pnlDescricao.right
+    anchors.bottom: pnlDescricao.bottom
+    margin-left: 1
+    step: 16
+    pixels-scroll: true
+    visible: false
+
+  ScrollablePanel
+    id: pnlAtaques
+    anchors.top: parent.top
+    anchors.left: parent.left
+    margin-top: 272
+    margin-left: 15
+    size: 276 118
+    vertical-scrollbar: scrAtaques
+    visible: false
+
+    ListLabel
+      id: lblConteudo
+      anchors.left: parent.left
+      anchors.top: parent.top
+      margin-top: 2
+      margin-left: 2
+
+  VerticalScrollBar
+    id: scrAtaques
+    anchors.top: pnlAtaques.top
+    anchors.left: pnlAtaques.right
+    anchors.bottom: pnlAtaques.bottom
+    margin-left: 1
+    step: 16
+    pixels-scroll: true
+    visible: false
+
+  ScrollablePanel
+    id: pnlHabilidades
+    anchors.top: parent.top
+    anchors.left: parent.left
+    margin-top: 272
+    margin-left: 15
+    size: 276 118
+    vertical-scrollbar: scrHabilidades
+    visible: false
+
+    ListLabel
+      id: lblConteudo
+      anchors.left: parent.left
+      anchors.top: parent.top
+      margin-top: 2
+      margin-left: 2
+
+  VerticalScrollBar
+    id: scrHabilidades
+    anchors.top: pnlHabilidades.top
+    anchors.left: pnlHabilidades.right
+    anchors.bottom: pnlHabilidades.bottom
+    margin-left: 1
+    step: 16
+    pixels-scroll: true
+    visible: false
